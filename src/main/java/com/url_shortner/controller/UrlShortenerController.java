@@ -18,6 +18,7 @@ public class UrlShortenerController {
 
     private final UrlShortenerService service;
 
+    // POST /api/shorten  — shorten a long URL
     @PostMapping("/api/shorten")
     public ResponseEntity<UrlResponse> shorten(@Valid @RequestBody UrlRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.shorten(request));
